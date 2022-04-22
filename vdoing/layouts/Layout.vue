@@ -3,10 +3,10 @@
         class="container-bg"
     >
         <div
-            v-for="(item, index) in imgList"
+            v-for="(item, index) in getImgList"
             :key="index"
             class="bg-item"
-            :style="{backgroundImage: `url(${item.url})`}"
+            :style="{backgroundImage: item.url}"
         ></div>
         <div
             class="algo-wrap"
@@ -21,26 +21,28 @@
 </template>
 <script>
 import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox'
+
 export default {
     components: { AlgoliaSearchBox },
     data() {
-        return {
-            imgList: [
-                {
-                    url: '/bg/1.jpeg'
-                }, {
-                    url: '/bg/2.jpeg'
-                }, {
-                    url: '/bg/3.jpeg'
-                }, {
-                    url: '/bg/4.jpeg'
-                }, {
-                    url: '/bg/5.jpeg'
-                }
-            ]
-        }
+        return { }
     },
     computed: {
+        getImgList() {
+            return [
+                {
+                    url: `url(${this.$withBase('/bg/1.jpeg')})`
+                }, {
+                    url: `url(${this.$withBase('/bg/2.jpeg')})`
+                }, {
+                    url: `url(${this.$withBase('/bg/3.jpeg')})`
+                }, {
+                    url: `url(${this.$withBase('/bg/4.jpeg')})`
+                }, {
+                    url: `url(${this.$withBase('/bg/5.jpeg')})`
+                }
+            ]
+        },
         algolia () {
             return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
         },

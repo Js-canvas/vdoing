@@ -6,12 +6,12 @@
 	>
 		<img
 			class="search-blur"
-			src="/img/search-blur.svg"
+			:src="$withBase('/img/search-blur.svg')"
 			:style="{display: `${searchStatus === 'blur' ? 'block' : 'none'}`}"
 		/>
 		<img
 			class="search-focus"
-			src="/img/search-focus.svg"
+			:src="$withBase('/img/search-focus.svg')"
 			:style="{display: `${searchStatus === 'focus' ? 'block' : 'none'}`}"
 		/>
 		<input
