@@ -12,7 +12,7 @@
           !homeData.features && !homeData.heroImage && `padding-top: 7rem`
         "
       >
-        <header class="hero">
+        <!-- <header class="hero">
           <img
             v-if="homeData.heroImage"
             :src="$withBase(homeData.heroImage)"
@@ -27,7 +27,7 @@
           <p class="action" v-if="homeData.actionText && homeData.actionLink">
             <NavLink class="action-button" :item="actionLink" />
           </p>
-        </header>
+        </header> -->
 
         <!-- PC端features块 s -->
         <div class="features" v-if="hasFeatures && !isMQMobile">

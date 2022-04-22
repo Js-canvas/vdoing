@@ -11,8 +11,8 @@ import htmlModules from './config/htmlModules' // 自定义插入的html块
 const { default: {defineConfig4CustomTheme, UserPlugins} } = vuepressConfig;
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing', // 使用npm主题包
-  // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
+  // theme: 'vdoing', // 使用npm主题包
+  theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
 
   locales: {
     '/': {
@@ -120,10 +120,18 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     logo: '/img/logo.png', // 导航栏logo
     repo: 'Js-canvas/vdoing', // 导航栏右侧生成Github链接
     searchMaxSuggestions: 10, // 搜索结果显示最大数
+    searchPlaceholder: '搜索文档',
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     editLinks: true, // 启用编辑
     editLinkText: '编辑',
+    // Algolia 搜索
+    algolia: {
+      apiKey: 'c78f2bd00df550e7e97ebe987dd58103',
+      indexName: 'algolia-search',
+      // 如果 Algolia 没有为你提供 `appId` ，使用 `BH4D9OD16A` 或者移除该配置项
+      appId: '2IZ5CCKDD9',
+    },
 
     //*** 以下是Vdoing主题相关配置，文档：https://doc.xugaoyi.com/pages/a20ce8/ ***//
 
@@ -158,8 +166,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 文章默认的作者信息，(可在md文件中单独配置此信息) string | {name: string, link?: string}
     author: {
-      name: 'xugaoyi', // 必需
-      link: 'https://github.com/xugaoyi', // 可选的
+      name: 'zyj', // 必需
+      link: 'https://github.com/Js-canvas', // 可选的
     },
 
     // 博主信息 (显示在首页侧边栏)
@@ -234,7 +242,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
 
   // 插件配置
-  plugins: <UserPlugins>[
+  plugins: <typeof UserPlugins>[
 
     'vuepress-plugin-baidu-autopush', // 百度自动推送
 
