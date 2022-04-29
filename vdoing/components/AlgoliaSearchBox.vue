@@ -5,18 +5,20 @@
 		role="search"
 	>
 		<img
+			v-if="isShowImg"
 			class="search-blur"
 			:src="$withBase('/img/search-blur.svg')"
 			:style="{display: `${searchStatus === 'blur' ? 'block' : 'none'}`}"
 		/>
 		<img
+			v-if="false"
 			class="search-focus"
 			:src="$withBase('/img/search-focus.svg')"
 			:style="{display: `${searchStatus === 'focus' ? 'block' : 'none'}`}"
 		/>
 		<input
 			id="algolia-search-input"
-			class="search-query"
+			:class="isAlgoliaNav ? 'search-query-nav' : 'search-query'"
 			@focus="searchFocus"
 			@blur="searchBlur"
 			:placeholder="placeholder"
@@ -26,7 +28,7 @@
 
 <script>
 export default {
-	props: ['options'],
+	props: ['options', 'showImg', 'algoliaNav'],
 
 	data () {
 		return {
@@ -34,14 +36,22 @@ export default {
 			searchStatus: 'blur',
 		}
 	},
+	computed: {
+		isShowImg() {
+			return typeof this.showImg === 'undefined' ? true : !!this.showImg
+		},
+		isAlgoliaNav() {
+			return typeof this.algoliaNav === 'undefined' ? false : !!this.algoliaNav
+		}
+	},
 
 	mounted () {
-		this.initialize(this.options, this.$lang)
+		this.initialize(this.options)
 		this.placeholder = this.$site.themeConfig.searchPlaceholder || ''
 	},
 
 	methods: {
-		initialize (userOptions, lang) {
+		initialize (userOptions) {
 			Promise.all([
 				import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.js'),
 				import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.css')
@@ -68,27 +78,21 @@ export default {
 			})
 		},
 
-		update (options, lang) {
+		update (options) {
 			this.$el.innerHTML = '<input id="algolia-search-input" class="search-query">'
-			this.initialize(options, lang)
+			this.initialize(options)
 		},
 		searchFocus () {
-			console.log('focus')
 			this.searchStatus = 'focus'
 		},
 		searchBlur () {
-			console.log('blur')
 			this.searchStatus = 'blur'
 		}
 	},
 
 	watch: {
-		$lang (newValue) {
-			this.update(this.options, newValue)
-		},
-
 		options (newValue) {
-			this.update(newValue, this.$lang)
+			this.update(newValue)
 		}
 	}
 }
@@ -104,23 +108,15 @@ export default {
 		top -45px
 		right 21px
 		z-index 10
-	// .search-blur
-	// 	display block
-	// .search-focus
-	// 	display none
-	// .search-query:focus
-	// 	background #f00
-	// 	.serach-focus
-	// 		display block
-	// 	.search-blur
-	// 		display none
 .algolia-autocomplete
 	display flex!important
 	flex 1
-	.search-query
+	.search-query, .search-query-nav
 		flex 1
 		background #fff
 		border 1px solid #fff
 		border-radius 50px
 		padding-left 24px
+	.search-query-nav
+		border 1px solid #13b9e2
 </style>

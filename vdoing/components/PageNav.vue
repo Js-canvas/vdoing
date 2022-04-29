@@ -153,7 +153,7 @@ function find (page, items, offset) {
   }
 }
 
-function flatten (items, res) {
+function flatten (items = [], res) {
   for (let i = 0, l = items.length; i < l; i++) {
     if (items[i].type === 'group') {
       flatten(items[i].children || [], res)

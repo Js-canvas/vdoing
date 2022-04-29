@@ -17,7 +17,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: "Evan's blog",
+      title: "weber_j's blog",
       description: 'web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。',
     }
   },
@@ -27,7 +27,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   themeConfig: {
     // 导航配置
     nav: [
-      { text: '首页', link: '/' },
+      // { text: '首页', link: '/' },
       {
         text: '前端',
         link: '/web/', //目录页链接，此处link是vdoing主题新增的配置项，有二级导航时，可以点击一级导航跳到目录页
@@ -96,25 +96,25 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: '友情链接', link: '/friends/' },
         ],
       },
-      { text: '关于', link: '/about/' },
-      {
-        text: '收藏',
-        link: '/pages/beb6c0bd8a66cea6/',
-        // items: [
-        //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
-        //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
-        //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
-        // ],
-      },
-      {
-        text: '索引',
-        link: '/archives/',
-        items: [
-          { text: '分类', link: '/categories/' },
-          { text: '标签', link: '/tags/' },
-          { text: '归档', link: '/archives/' },
-        ],
-      },
+      // { text: '关于', link: '/about/' },
+      // {
+      //   text: '收藏',
+      //   link: '/pages/beb6c0bd8a66cea6/',
+      //   // items: [
+      //   //   { text: '网站', link: '/pages/beb6c0bd8a66cea6/' },
+      //   //   { text: '资源', link: '/pages/eee83a9211a70f9d/' },
+      //   //   { text: 'Vue资源', link: '/pages/12df8ace52d493f6/' },
+      //   // ],
+      // },
+      // {
+      //   text: '索引',
+      //   link: '/archives/',
+      //   items: [
+      //     { text: '分类', link: '/categories/' },
+      //     { text: '标签', link: '/tags/' },
+      //     { text: '归档', link: '/archives/' },
+      //   ],
+      // },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
@@ -171,11 +171,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     },
 
     // 博主信息 (显示在首页侧边栏)
-    blogger: {
-      avatar: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
-      name: 'Evan Xu',
-      slogan: '前端界的小学生',
-    },
+    // blogger: {
+    //   avatar: 'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
+    //   name: 'Evan Xu',
+    //   slogan: '前端界的小学生',
+    // },
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
     social: {
@@ -209,8 +209,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
     extendFrontmatter: {
       author: {
-        name: 'xugaoyi',
-        link: 'https://github.com/xugaoyi'
+        name: 'weber_j',
+        link: 'https://github.com/Js-canvas'
       }
     },
 
