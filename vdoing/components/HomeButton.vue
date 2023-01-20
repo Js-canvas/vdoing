@@ -25,6 +25,6 @@ export default {
 <style lang="stylus" scoped>
     .home-button
         >img
-            width 220px
+            width 32px
             cursor pointer
 </style>

@@ -19,5 +19,8 @@ export default {
     },
 }
 </script>
-<style lang="stylus" scoped>
+<style scoped>
+    .container-bg {
+        font-family: zkgd !important;
+    }
 </style>

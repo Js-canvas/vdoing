@@ -11,7 +11,7 @@
 			:style="{display: `${searchStatus === 'blur' ? 'block' : 'none'}`}"
 		/>
 		<img
-			v-if="false"
+			v-if="isShowImg"
 			class="search-focus"
 			:src="$withBase('/img/search-focus.svg')"
 			:style="{display: `${searchStatus === 'focus' ? 'block' : 'none'}`}"
@@ -68,7 +68,7 @@ export default {
 							'facetFilters': ["*"].concat(algoliaOptions.facetFilters || [])
 						}, algoliaOptions),
 						handleSelected: (input, event, suggestion) => {
-							const { pathname, hash } = new URL(suggestion.url)
+							const { pathname, hash } = new URL(suggestion.url, window.location.origin)
 							const routepath = pathname.replace(this.$site.base, '/');
 							const _hash = decodeURIComponent(hash)
 							this.$router.push(`${routepath}${_hash}`)

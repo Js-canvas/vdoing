@@ -87,8 +87,6 @@ export default {
             display flex
         .layout-show-info
             top calc(50% - 160px)
-        .layout-show-btn
-            top calc(50% + 40px)
         .layout-show-info, .layout-show-btn
             width 350px
             position absolute
@@ -105,7 +103,10 @@ export default {
                 animation text-flicker-in-glow 6s linear both
             .button-shake-bottom:hover
                 animation shake-bottom .8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
-
+        .layout-show-btn
+            width auto
+            left calc(50% + 132px)
+            top calc(50% - 16px)
         .bg-item
             width 100%
             height 100%
