@@ -17,9 +17,9 @@ if [ -z "$GITHUB_TOKEN" ]; then
   githubUrl=git@github.com:Js-canvas/vdoing.git
 else
   msg='来自github actions的自动部署'
-  githubUrl=https://zhangyjt:${GITHUB_TOKEN}@github.com/Js-canvas/vdoing.git
-  git config --global user.name "zhangyjt"
-  git config --global user.email "zhangyjt@yonyou.com"
+  githubUrl=https://Js-canvas:${GITHUB_TOKEN}@github.com/Js-canvas/vdoing.git
+  git config --global user.name "Js-canvas"
+  git config --global user.email "weber_j@163.com"
 fi
 git init
 git add -A
