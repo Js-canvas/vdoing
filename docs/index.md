@@ -86,8 +86,8 @@ features: # 可选的
 
 ## :email: 联系
 
-- **WeChat or QQ**: <a href="tencent://message/?uin=894072666&Site=&Menu=yesUrl" class='qq'>894072666</a>
-- **Email**: <a href="mailto:894072666@qq.com">894072666@qq.com</a>
-- **GitHub**: <https://github.com/xugaoyi>
+- **WeChat or QQ**: <a href="tencent://message/?uin=501868392&Site=&Menu=yesUrl" class='qq'>501868392</a>
+- **Email**: <a href="mailto:501868392@qq.com">501868392@qq.com</a>
+- **GitHub**: <https://github.com/Js-canvas>
 
 </br>  -->
